@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户登录</title>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+</head>
+<body>
+<h1>AJAX异步登录</h1>
+<form>
+账号<input name="account" placeholder="用户名、邮箱、手机号"><br>
+密码<input name="password" type="password" placeholder="请输入密码" ><br>
+<img id="yzm"><br>
+验证码：<input name="code"><br>
+</form>
+<input id="bt1" type="button" value="安全登录" >
+ 
+
+<script type="text/javascript">
+$(function(){
+	$('#bt1').click(function(){
+		//发起登录请求(data:1成功，2账号或密码不正确,3验证码不正确)
+		$.post('public/login',$('form').serialize(),function(data){
+			if(data.text=='AccountNull'){
+				alert("账号不存在");
+			}
+			if(data.text=='PwdErr'){
+				alert("密码不正确");
+			}
+			if(data.text=='Success'){
+				alert("登录成功");
+			}
+		},'json');
+	});
+	$('#yzm').click(function(){
+		$(this).attr('src','./verify.jpg?r='+Math.random());
+	}).click();
+	
+	
+});
+</script>
+</body>
+</html>

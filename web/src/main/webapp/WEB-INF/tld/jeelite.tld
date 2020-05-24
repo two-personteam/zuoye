@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>f</short-name>
+	<uri>/jeelite-tags</uri>
+	<display-name>"自定义标签"</display-name>
+	
+	<tag>
+		<name>assets</name>
+		<tag-class>com.itshidu.jeelite.common.tags.core.BaseTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>加载资源，在resource/WebAssets.xml中定义，多个name用逗号分隔</description>
+		<attribute>
+			<name>names</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>加载类型</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>fontIcon</name>
+		<tag-class>com.itshidu.jeelite.common.tags.core.FormFontIconTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>选择字体图标的表单控件</description>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>显示的文字</description>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>表单元素的name</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>初始图标值，默认[fa fa-file-text-o]</description>
+		</attribute>
+		<attribute>
+			<name>iframeWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>iframe选择框的宽度，默认600px</description>
+		</attribute>
+		<attribute>
+			<name>iframeHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>iframe选择框的高度，默认400px</description>
+		</attribute>
+		<attribute>
+			<name>onColorChange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>颜色变化时的JS回调,内置参数：hsb,hex,rgb,el,bySetColor</description>
+		</attribute>
+	</tag>
+	
+</taglib>

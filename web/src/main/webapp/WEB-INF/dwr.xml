@@ -1,0 +1,37 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://directwebremoting.org/schema/dwr30.dtd">
+
+<dwr>
+
+	<!-- without allow, DWR isn't allowed to do anything -->
+	<allow>
+	<!-- 
+		<create creator="new" javascript="chat">
+			<param name="class" value="com.itshidu.jeelite.common.chat.ChatServer"></param>
+		</create>
+ -->
+		<create creator="spring" javascript="mail">
+			<param name="beanName" value="mailUtil"></param>
+		</create>
+		
+		<create creator="new" javascript="md5">
+			<param name="class" value="com.itshidu.jeelite.common.util.MD5Util"></param>
+		</create>
+		
+		<create javascript="mailSender" creator="spring">
+            <param name="beanName" value="mailSender"></param>
+    	</create>
+		
+		<convert converter="bean" match="com.itshidu.jeelite.common.persistence.Paging" ></convert>
+		
+<!-- 在页面中引入资源，其中xxx代表上面的脚本名 -->
+<!-- 
+<script type="text/javascript" src="dwr/engine.js"></script>
+<script type="text/javascript" src="dwr/util.js"></script>
+<script type="text/javascript" src="dwr/interface/xxx.js"></script>
+-->
+	
+	</allow>
+
+</dwr>
