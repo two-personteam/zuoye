@@ -14,7 +14,7 @@
 		<spring.version>5.0.0.RELEASE</spring.version>
 		<struts.version>2.5.13</struts.version>
 		<hibernate.version>5.2.11.Final</hibernate.version>
-		<shiro.version>1.4.0</shiro.version>
+		<shiro.version>1.6.0</shiro.version>
 	</properties>
 
 	<dependencies>
